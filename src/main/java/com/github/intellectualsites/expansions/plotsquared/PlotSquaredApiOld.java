@@ -67,7 +67,7 @@ public class PlotSquaredApiOld implements PlotSquaredApiInterface {
                 return new StringBuilder(String.valueOf(pl.getCurrentPlot().getMembers().size())).toString();
             }
             case "has_build_rights": {
-                return (pl.getCurrentPlot() != null) ? ((pl.getCurrentPlot().getMembers().contains(pl.getUUID()) || pl.getCurrentPlot().getOwners().contains(pl.getUUID())) ? PlaceholderAPIPlugin.booleanTrue() : PlaceholderAPIPlugin.booleanFalse()) : "";
+                return (pl.getCurrentPlot() != null) ? ((pl.getCurrentPlot().isAdded(pl.getUUID())) ? PlaceholderAPIPlugin.booleanTrue() : PlaceholderAPIPlugin.booleanFalse()) : "";
             }
             default:
                 break;
