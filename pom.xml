@@ -21,8 +21,12 @@
     </repository>
     <repository>
       <id>plotsquared-old</id>
-      <url>http://ci.athion.net/job/PlotSquared/ws/mvn/</url>
+      <url>http://ci.athion.net/job/PlotSquared-Legacy/ws/mvn/</url>
     </repository>
+	<repository>
+		<id>jitpack.io</id>
+		<url>https://jitpack.io</url>
+	</repository>
   </repositories>
   
   <dependencies>
