@@ -5,8 +5,9 @@ This project is intended to be an updated and backwards compatible alternative t
 
 This expansion should work for both the old and new API's of PlotSquared.
 
+[Download the extension here](https://github.com/IntellectualSites/PlotSquared-Expansion/releases)
+
 Following placeholders are available:
-- %plotsquared_currentplot_alias%
 - %plotsquared_currentplot_alias%
 - %plotsquared_currentplot_owner%
 - %plotsquared_currentplot_members_size%
