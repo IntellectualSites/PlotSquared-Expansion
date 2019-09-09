@@ -7,9 +7,9 @@ This expansion works for both the old and new API's of PlotSquared.
 
 ### Downloads
 [Download from the eCloud](https://api.extendedclip.com/expansions/plotsquared/) <br>
-Download ingame: `/papi ecloud download PlotSquared`
+Download ingame: `/papi ecloud download PlotSquared` followd by `/papi reload`
 
-###Following placeholders are available:
+### Following placeholders are available:
 ```
 - %plotsquared_currentplot_alias%
 - %plotsquared_currentplot_owner%
