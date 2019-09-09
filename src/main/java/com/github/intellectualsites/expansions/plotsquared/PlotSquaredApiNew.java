@@ -1,31 +1,31 @@
 package com.github.intellectualsites.expansions.plotsquared;
 
-import java.util.Set;
-import java.util.UUID;
-
+import com.github.intellectualsites.plotsquared.plot.PlotSquared;
+import com.github.intellectualsites.plotsquared.plot.object.Plot;
+import com.github.intellectualsites.plotsquared.plot.object.PlotPlayer;
+import com.github.intellectualsites.plotsquared.plot.util.UUIDHandler;
+import me.clip.placeholderapi.PlaceholderAPIPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-import com.github.intellectualsites.plotsquared.plot.PlotSquared;
-import com.github.intellectualsites.plotsquared.plot.object.PlotPlayer;
-import com.github.intellectualsites.plotsquared.plot.util.UUIDHandler;
-
-import me.clip.placeholderapi.PlaceholderAPIPlugin;
+import java.util.Set;
+import java.util.UUID;
 
 public class PlotSquaredApiNew implements PlotSquaredApiInterface {
-	
-	private PlotSquared api;
 
-	public PlotSquaredApiNew() {
-		this.api = PlotSquared.get();
-	}
-	
-	@Override
-	public String onPlaceHolderRequest(Player p, String identifier) {
+    private PlotSquared api;
+
+    public PlotSquaredApiNew() {
+        this.api = PlotSquared.get();
+    }
+
+    @Override
+    public String onPlaceHolderRequest(Player p, String identifier) {
         if (this.api == null || p == null) {
             return "";
         }
         final PlotPlayer pl = PlotPlayer.get(p.getName());
+        final Plot plot = pl.getCurrentPlot();
         if (pl == null) {
             return "";
         }
@@ -37,11 +37,11 @@ public class PlotSquaredApiNew implements PlotSquaredApiInterface {
                 if (pl.getCurrentPlot() == null) {
                     return "";
                 }
-                final Set<UUID> o = (Set<UUID>)pl.getCurrentPlot().getOwners();
+                final Set<UUID> o = pl.getCurrentPlot().getOwners();
                 if (o == null || o.isEmpty()) {
                     return "";
                 }
-                final UUID uid = (UUID)o.toArray()[0];
+                final UUID uid = (UUID) o.toArray()[0];
                 if (uid == null) {
                     return "";
                 }
@@ -55,25 +55,67 @@ public class PlotSquaredApiNew implements PlotSquaredApiInterface {
                 return (pl.getPlotCount() > 0) ? PlaceholderAPIPlugin.booleanTrue() : PlaceholderAPIPlugin.booleanFalse();
             }
             case "allowed_plot_count": {
-                return new StringBuilder(String.valueOf(pl.getAllowedPlots())).toString();
+                return String.valueOf(pl.getAllowedPlots());
             }
             case "plot_count": {
-                return new StringBuilder(String.valueOf(pl.getPlotCount())).toString();
+                return String.valueOf(pl.getPlotCount());
             }
-            case "currentplot_members_size": {
+            case "currentplot_members": {
                 if (pl.getCurrentPlot() == null) {
+                    return "";
+                }
+                if (pl.getCurrentPlot().getMembers() == null && pl.getCurrentPlot().getTrusted() == null) {
                     return "0";
                 }
-                return new StringBuilder(String.valueOf(pl.getCurrentPlot().getMembers().size())).toString();
+                return String.valueOf(pl.getCurrentPlot().getMembers().size() + pl.getCurrentPlot().getTrusted().size());
+            }
+            case "currentplot_members_added": {
+                if (pl.getCurrentPlot() == null) {
+                    return  "";
+                }
+                if (pl.getCurrentPlot().getMembers() == null) {
+                    return "0";
+                }
+                return String.valueOf(pl.getCurrentPlot().getMembers().size());
+            }
+            case "currentplot_members_trusted": {
+                if (pl.getCurrentPlot() == null) {
+                    return  "";
+                }
+                if (pl.getCurrentPlot().getTrusted() == null) {
+                    return "0";
+                }
+                return String.valueOf(plot.getTrusted().size());
+            }
+            case "currentplot_members_denied": {
+                if (pl.getCurrentPlot() == null) {
+                    return  "";
+                }
+                if (pl.getCurrentPlot().getDenied() == null) {
+                    return "0";
+                }
+                return String.valueOf(pl.getCurrentPlot().getDenied().size());
             }
             case "has_build_rights": {
                 return (pl.getCurrentPlot() != null) ? ((pl.getCurrentPlot().isAdded(pl.getUUID())) ? PlaceholderAPIPlugin.booleanTrue() : PlaceholderAPIPlugin.booleanFalse()) : "";
+            }
+            case "currentplot_x": {
+                if (pl.getCurrentPlot() == null) {
+                    return "";
+                }
+                return String.valueOf(plot.getId().x);
+            }
+            case "currentplot_y": {
+                if (pl.getCurrentPlot() == null) {
+                    return "";
+                }
+                return String.valueOf(plot.getId().y);
             }
             default:
                 break;
         }
         return null;
-	}
+    }
 
 
 }

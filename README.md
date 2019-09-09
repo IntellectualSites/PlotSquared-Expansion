@@ -1,18 +1,27 @@
 # PlotSquared-Expansion
 PlotSquared expansion for PlaceholderAPI
 
-This project is intended to be an updated and backwards compatible alternative to the PlotSquared expansion currently hosted on PlaceholderAPI's ecloud.
+This project is intended to be an updated and backwards compatible extension for PlotSquared.
 
-This expansion should work for both the old and new API's of PlotSquared.
+This expansion works for both the old and new API's of PlotSquared.
 
-[Download the extension here](https://github.com/IntellectualSites/PlotSquared-Expansion/releases)
+### Downloads
+[Download from the eCloud](https://api.extendedclip.com/expansions/plotsquared/) <br>
+Download ingame: `/papi ecloud download PlotSquared`
 
-Following placeholders are available:
+###Following placeholders are available:
+```
 - %plotsquared_currentplot_alias%
 - %plotsquared_currentplot_owner%
-- %plotsquared_currentplot_members_size%
+- %plotsquared_currentplot_members%
+    - %plotsquared_currentplot_members_added%
+    - %plotsquared_currentplot_members_trusted%
+- %plotsquared_currentplot_members_denied%
 - %plotsquared_currentplot_world%
 - %plotsquared_has_plot%
 - %plotsquared_has_build_rights%
 - %plotsquared_plot_count%
 - %plotsquared_allowed_plot_count%
+- %plotsquared_currentplot_x%
+- %plotsquared_currentplot_y%
+```
