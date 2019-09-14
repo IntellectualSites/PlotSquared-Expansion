@@ -9,6 +9,11 @@ This expansion works for both the old and new API's of PlotSquared.
 [Download from the eCloud](https://api.extendedclip.com/expansions/plotsquared/) <br>
 Download ingame: `/papi ecloud download PlotSquared` followed by `/papi reload`
 
+### Note to FeatherBoard users
+FeatherBoard does not use the regular PlaceholderAPI setup. Therefore, you must edit the placeholders a bit, check the example below:    
+`{placeholderapi_plotsquared_currentplot_alias}` <br>
+You need to add `placeholderapi` in front of all placeholders.
+
 ### Following placeholders are available:
 ```
 - %plotsquared_currentplot_alias%
@@ -22,6 +27,9 @@ Download ingame: `/papi ecloud download PlotSquared` followed by `/papi reload`
 - %plotsquared_has_build_rights%
 - %plotsquared_plot_count%
 - %plotsquared_allowed_plot_count%
-- %plotsquared_currentplot_x%
-- %plotsquared_currentplot_y%
+- %plotsquared_currentplot_xy%
+    - %plotsquared_currentplot_x%
+    - %plotsquared_currentplot_y%
+- %plotsquared_currentplot_rating%
+- %plotsquared_currentplot_biome%
 ```
