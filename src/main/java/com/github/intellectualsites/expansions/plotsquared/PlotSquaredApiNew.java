@@ -71,7 +71,7 @@ public class PlotSquaredApiNew implements PlotSquaredApiInterface {
             }
             case "currentplot_members_added": {
                 if (pl.getCurrentPlot() == null) {
-                    return  "";
+                    return "";
                 }
                 if (pl.getCurrentPlot().getMembers() == null) {
                     return "0";
@@ -80,7 +80,7 @@ public class PlotSquaredApiNew implements PlotSquaredApiInterface {
             }
             case "currentplot_members_trusted": {
                 if (pl.getCurrentPlot() == null) {
-                    return  "";
+                    return "";
                 }
                 if (pl.getCurrentPlot().getTrusted() == null) {
                     return "0";
@@ -89,7 +89,7 @@ public class PlotSquaredApiNew implements PlotSquaredApiInterface {
             }
             case "currentplot_members_denied": {
                 if (pl.getCurrentPlot() == null) {
-                    return  "";
+                    return "";
                 }
                 if (pl.getCurrentPlot().getDenied() == null) {
                     return "0";
@@ -111,11 +111,28 @@ public class PlotSquaredApiNew implements PlotSquaredApiInterface {
                 }
                 return String.valueOf(plot.getId().y);
             }
+            case "currentplot_xy": {
+                if (pl.getCurrentPlot() == null) {
+                    return "";
+                }
+                return pl.getCurrentPlot().getId().x + ";" + pl.getCurrentPlot().getId().y;
+            }
+            case "currentplot_rating": {
+                if (pl.getCurrentPlot() == null) {
+                    return "";
+                }
+                return String.valueOf(plot.getAverageRating());
+            }
+            case "currentplot_biome": {
+                if (pl.getCurrentPlot() == null) {
+                    return "";
+                }
+                return String.valueOf(plot.getBiome());
+            }
             default:
                 break;
         }
         return null;
     }
-
 
 }
