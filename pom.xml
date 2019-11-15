@@ -45,7 +45,7 @@
     <dependency>
       <groupId>com.github.intellectualsites.plotsquared</groupId>
       <artifactId>PlotSquared-API</artifactId>
-      <version>latest</version>
+      <version>4.390</version>
       <scope>provided</scope>
       <exclusions>
       	<exclusion>
