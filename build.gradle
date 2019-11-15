@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.bukkit', name: 'bukkit', version: '1.12.2-R0.1-SNAPSHOT'
+    compile group: 'org.bukkit', name: 'bukkit', version: '1.14.4-R0.1-SNAPSHOT'
     compileOnly group: 'me.clip', name: 'placeholderapi', version: '2.10.4'
     compileOnly(group: 'com.github.intellectualsites.plotsquared', name: 'PlotSquared-API', version: 'latest') {
         exclude(module: 'worldedit-core')
