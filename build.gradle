@@ -8,20 +8,16 @@ repositories {
     mavenCentral()
     maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots/" }
     maven { url "http://repo.extendedclip.com/content/repositories/placeholderapi/" }
-    maven { url "http://ci.athion.net/job/PlotSquared-Breaking/ws/mvn/" }
-    maven { url "http://ci.athion.net/job/PlotSquared-Legacy/ws/mvn/" }
     maven { url "https://jitpack.io" }
     maven { url "https://repo.maven.apache.org/maven2" }
     maven { url "https://maven.enginehub.org/repo/" }
+    maven { url "https://mvn.intellectualsites.com/content/groups/public/" }
 }
 
 dependencies {
     compile group: 'org.bukkit', name: 'bukkit', version: '1.12.2-R0.1-SNAPSHOT'
     compileOnly group: 'me.clip', name: 'placeholderapi', version: '2.10.4'
-    compileOnly(group: 'com.github.intellectualsites.plotsquared', name: 'PlotSquared-API', version: 'latest') {
-        exclude(module: 'worldedit-core')
-    }
-    compileOnly(group: 'com.plotsquared', name: 'plotsquared-api', version: 'latest') {
+    compileOnly(group: 'com.plotsquared', name: 'PlotSquared-Core', version: '5.11.1') {
         exclude(module: 'worldedit-core')
     }
     compileOnly 'com.sk89q.worldedit:worldedit-core:7.0.1'

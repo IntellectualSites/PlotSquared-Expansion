@@ -29,12 +29,12 @@ public class PlotSquaredExpansion extends PlaceholderExpansion {
     }
 
     public String getVersion() {
-        return "2.3";
+        return "3.0";
     }
 
     public boolean register() {
         this.api = determineApi();
-        return this.api != null && PlaceholderAPI.registerPlaceholderHook(this.getIdentifier(), this);
+        return PlaceholderAPI.registerPlaceholderHook(this.getIdentifier(), this);
     }
 
     public String onPlaceholderRequest(final Player p, final String identifier) {
@@ -42,14 +42,6 @@ public class PlotSquaredExpansion extends PlaceholderExpansion {
     }
 
     private PlotSquaredApiInterface determineApi() {
-        try {
-            return new PlotSquaredApiNew();
-        } catch (NoClassDefFoundError e) {
-            try {
-                return new PlotSquaredApiOld();
-            } catch (NoClassDefFoundError e1) {
-                return null;
-            }
-        }
+        return new PlotSquaredApi();
     }
 }

@@ -134,3 +134,6 @@ local.properties
 .springBeans
 /target/
 classes/
+
+# VSCode
+.vscode

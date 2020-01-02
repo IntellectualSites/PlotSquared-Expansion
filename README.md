@@ -34,4 +34,5 @@ You need to add `placeholderapi` in front of all placeholders.
     - %plotsquared_currentplot_y%
 - %plotsquared_currentplot_rating%
 - %plotsquared_currentplot_biome%
+- %plotsquared_currentplot_flag_<flagName>%
 ```
