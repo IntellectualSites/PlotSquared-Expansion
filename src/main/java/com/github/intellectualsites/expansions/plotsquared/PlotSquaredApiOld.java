@@ -27,6 +27,14 @@ public class PlotSquaredApiOld implements PlotSquaredApiInterface {
         if (pl == null) {
             return "";
         }
+
+        if (identifier.startsWith("has_plot_")) {
+            if (identifier.split("has_plot_").length != 2) return null;
+
+            identifier = identifier.split("has_plot_")[1];
+            return pl.getPlotCount(identifier) > 0 ? PlaceholderAPIPlugin.booleanTrue() : PlaceholderAPIPlugin.booleanFalse();
+        }
+
         switch (identifier) {
             case "currentplot_alias": {
                 return (pl.getCurrentPlot() != null) ? pl.getCurrentPlot().getAlias() : "";
