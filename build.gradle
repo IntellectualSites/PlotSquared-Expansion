@@ -11,6 +11,7 @@ repositories {
     maven { url "http://ci.athion.net/job/PlotSquared-Breaking/ws/mvn/" }
     maven { url "http://ci.athion.net/job/PlotSquared-Legacy/ws/mvn/" }
     maven { url "https://jitpack.io" }
+    maven { url "https://maven.sk89q.com/repo/" }
     maven { url "http://repo.maven.apache.org/maven2" }
     maven { url "https://maven.enginehub.org/repo/" }
 }
