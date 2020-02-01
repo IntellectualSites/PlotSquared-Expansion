@@ -24,8 +24,10 @@ You need to add `placeholderapi` in front of all placeholders.
 - %plotsquared_currentplot_members_denied%
 - %plotsquared_currentplot_world%
 - %plotsquared_has_plot%
+    - %plotsquared_has_plot_<World>%
 - %plotsquared_has_build_rights%
 - %plotsquared_plot_count%
+    - %plotsquared_plot_count_<World>%
 - %plotsquared_allowed_plot_count%
 - %plotsquared_currentplot_xy%
     - %plotsquared_currentplot_x%

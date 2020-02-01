@@ -29,7 +29,7 @@ public class PlotSquaredExpansion extends PlaceholderExpansion {
     }
 
     public String getVersion() {
-        return "2.2";
+        return "2.3";
     }
 
     public boolean register() {
