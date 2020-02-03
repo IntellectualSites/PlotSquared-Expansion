@@ -24,7 +24,7 @@ dependencies {
     compileOnly(group: 'com.plotsquared', name: 'plotsquared-api', version: 'latest') {
         exclude(module: 'worldedit-core')
     }
-    compileOnly 'com.sk89q.worldedit:worldedit-core:7.0.1'
+    compileOnly 'com.sk89q.worldedit:worldedit-core:7.1.0'
 }
 
 clean.doFirst {
